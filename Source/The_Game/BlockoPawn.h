@@ -4,7 +4,8 @@
 #include "GameFramework/Pawn.h"
 #include "BlockoPawn.generated.h"
 
-class UStaticMeshComponent
+class UStaticMeshComponent;
+
 UCLASS()
 class THE_GAME_API ABlockoPawn : public APawn
 {

@@ -24,17 +24,27 @@ public:
 	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
 	
 protected:
-	UPROPERTY(VisibleAnywhere)
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 	USceneComponent* Root;
 
-	UPROPERTY(VisibleAnywhere)
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 	UStaticMeshComponent* BlockA;
 
-	UPROPERTY(VisibleAnywhere)
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 	UStaticMeshComponent* BlockB;
 
-	UPROPERTY(VisibleAnywhere)
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 	UStaticMeshComponent* Connector;
 
-	bool bDragging = false;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+	float DragHeight = 100.0f;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+	bool bIsDragging = false;
+
+	UFUNCTION(BlueprintCallable, Category = "Drag")
+	void StartDragging();
+
+	UFUNCTION(BlueprintCallable, Category = "Drag")
+	void StopDragging();
 };
